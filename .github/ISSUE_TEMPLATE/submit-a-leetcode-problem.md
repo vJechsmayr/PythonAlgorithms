@@ -1,7 +1,7 @@
 ---
 name: Submit a LeetCode Problem
 about: Use this Template to submit a new LeetCode Problem
-title: ''
+title: 00## - LeetCode Problem Title
 labels: ''
 assignees: ''
 
