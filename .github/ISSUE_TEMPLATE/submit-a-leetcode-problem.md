@@ -11,4 +11,4 @@ assignees: ''
 You may copy that from LeetCode
 
 ## Link To The LeetCode Problem
-(LeetCode)[https://leetcode.com/]
+[LeetCode](https://leetcode.com/)
