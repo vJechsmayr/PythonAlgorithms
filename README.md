@@ -22,6 +22,7 @@ Only Pull Requests joined with an Issue and matching the naming-conventions (See
 ```markdown
 git clone https://github.com/your-username/pythonalgorithms.git
 ```
+* Comment to the Issue you want to work on - so I can assign you to it OR create a new Issue from a LeetCode Problem that is not implemented yet
 * Create a branch for a new feature
 ```markdown
 git checkout -b feature/branch-name
@@ -40,5 +41,10 @@ git push origin branch-name
 * Create a New Pull Request from your forked repository ( Click the 'New Pull Request' Button located at the top of your repo)
 * Wait for your PR review and merge approval!
 * __Star this repository__ if you had fun!
+
+## Which PR will be accepted?
+* Ones you are assigned to
+* Your PR has to link the Issue
+* Your Solution must be correct - you can check ist on LeetCode (submit) if it works on different test-cases
 
 __Thank You!__ 
