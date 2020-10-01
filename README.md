@@ -14,7 +14,8 @@ Please make sure your file is in the `LeetCode`-Folder and Named like this:
 `0001_TwoSum.py` -> 4-digit Number of the LeetCode Issue, Underscore, LeetCodeName
 
 ## Pull Requests
-Only Pull Requests joined with an Issue and matching the naming-conventions (See Folders and Files) will be merged!
+Only Pull Requests **joined with an Issue** and matching the **naming-conventions** (See Folders and Files) will be merged!
+If your code don't passes the Check on LeetCode.com your PR will be labeld as **"invalid"** and the Issue stays open for the next PR!
 
 ## Getting Started
 * Fork this repository (Click the Form button, top right of this page)
