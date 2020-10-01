@@ -2,7 +2,7 @@
 name: Submit a LeetCode Problem
 about: Use this Template to submit a new LeetCode Problem
 title: 00## - LeetCode Problem Title
-labels: 'hacktoberfest', 'help wanted', 'good first issue'
+labels: 'hacktoberfest, help wanted, good first issue'
 assignees: ''
 
 ---
