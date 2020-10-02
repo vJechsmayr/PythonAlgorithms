@@ -1,56 +1,44 @@
-class Solution:
-    def longestValidParentheses(self, s: str) -> int:
-        state = 0
-        tokens = list()
-        for paren in s:
-            if paren == "(":
-                state = state - 1
-                tokens.append(-1)
+from typing import List, Dict
 
-            elif paren == ")" and state < 0:
-                state = state + 1
-                tokens.append(1)
+class Solution:
+    def _score(self, position: List[int], state: Dict[int,bool]) -> List[int]:
+        score = 0
+        scores = list()
+        for pos in position:
+            matched = state.get(pos)
+            if not matched:
+                scores.append(score)
+                score = 0
 
             else:
-                tokens.append(0)
+                score = score + 2
 
-        token_sets = [list()]
-        for token in tokens:
-            if token == 0:
-                token_sets.append(list())
-                continue
+        scores.append(score)
 
-            token_sets[-1].append(token)
+        return scores
 
-        valid_sets = [0]
-        for token_set in token_sets:
-            for offset in range(len(token_set)-1):
-                for nudge in range(offset+1):
-                    offset_front = offset - nudge
-                    offset_back = len(token_set) - nudge
-                    offset_tokens = token_set[:][offset_front:offset_back]
+    def longestValidParentheses(self, s: str) -> int:
+        scores = [0]
+        state = dict()
+        position = list()
+        opened = list()
+        closed = list()
+        for p, paren in enumerate(s):
+            if paren == "(":
+                opened.append(p)
+                position.append(p)
+                state[p] = False
 
-                    invalid = True
-                    while invalid:
-                        check = 0
-                        front = offset_tokens[0]
-                        if front in [1, 0]:
-                            offset_tokens = offset_tokens[1:]
-                            check = check + 1
+            elif paren == ")" and len(opened) > 0:
+                op = opened.pop()
+                state[op] = True
 
-                        back = offset_tokens[-1]
-                        if back in [-1, 0]:
-                            offset_tokens = offset_tokens[:-1]
-                            check = check + 1
+            else:
+                scores.extend(self._score(position, state))
+                state = dict()
+                position = list()
+                opened = list()
+                closed = list()
 
-                        if check == 0:
-                            invalid = False
-
-                        if len(offset_tokens) < 2:
-                            break
-
-                    if not invalid and sum(offset_tokens) == 0:
-                        valid_sets.append(len(offset_tokens))
-                        continue
-
-        return max(valid_sets)
+        scores.extend(self._score(position, state))
+        return max(scores)
