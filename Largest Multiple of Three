@@ -1,0 +1,19 @@
+class Solution:
+    def largestMultipleOfThree(self, digits: List[int]) -> str:
+        d1, d2 = [1, 4, 7, 2, 5, 8], [2, 5, 8, 1, 4, 7]
+        count, sm = collections.Counter(digits), sum(digits)
+
+        while(sm%3!=0):
+            for d in d1 if sm%3==1 else d2:
+                if(count[d]):
+                    count[d]-=1
+                    sm -= d
+                    break
+                    
+        res = ""
+        for i in range(9,-1,-1):
+            if(count[i]):
+                res += str(i)*count[i]
+        if res=="":
+            return res
+        return res if res[0]!="0" else "0"    
