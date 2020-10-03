@@ -10,5 +10,5 @@ class Solution:
 
 
 val = Solution()
-print("Enter the number :")
+print("Enter  the number :")
 print("1 occur {} times".format(val.countDigitOne(int(input()))))
