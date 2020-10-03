@@ -1,16 +1,20 @@
-def power(x, n): 
-  
-    if (n == 0): return 1
-    elif (int(n % 2) == 0): 
-        return (power(x, int(n / 2)) *
-               power(x, int(n / 2))) 
-    else: 
-        return (x * power(x, int(n / 2)) *
-                   power(x, int(n / 2))) 
-                   
-x = int(input("Enter base : "))
-n = int(input('Enter power : '))
-print(power(x,n))
+class Solution:
+    
+    def myPow(self, x: float, n: int) -> float:
+
+        # base condition
+        if n == 0:
+            return 1
+
+        if n == 1:
+            return x
+
+        if n == -1:
+            return 1 / x
+
+        result = self.myPow(x, n // 2)
+
+        return result * result * (x if n % 2 else 1)
 
 # Time Complexity : O(log(n))
 #Soln by : 24Cipher
