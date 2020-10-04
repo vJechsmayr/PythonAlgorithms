@@ -1,10 +1,20 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        if len(nums) <= 1:
-            return False
-        buff_dict = {}
-        for i in range(len(nums)):
-            if nums[i] in buff_dict:
-                return [buff_dict[nums[i]], i]
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dic = {}
+        num_of_nums = len(nums)
+        i = 0
+        while i < num_of_nums:
+            num = target - nums[i]
+            if (num in dic):
+                return [dic[num], i]
             else:
-                buff_dict[target - nums[i]] = i
+                dic[nums[i]] = i
+                i = i + 1
+
+
+
