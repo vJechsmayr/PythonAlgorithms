@@ -6,7 +6,7 @@ class Solution:
             k = i
             while k:
                 chk = k%10
-                if not chk or i%chk != 0:
+                if not chk or i%chk:
                     include = False
                     break
                 k //= 10
@@ -14,4 +14,4 @@ class Solution:
                 res.append(i)
         return res
 
-# Runtime: 32 ms, faster than 99.25% of Python3 online submissions for Self Dividing Numbers.
+# Runtime: 24 ms, faster than 100% of Python3 online submissions for Self Dividing Numbers.
