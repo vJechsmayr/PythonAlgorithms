@@ -12,10 +12,10 @@ The Contributer who opened an issue will be assigned prefered to the issue. If t
 ### Pull Requests
 Only Pull Requests **joined with an Issue** and matching the **naming-conventions** (See Folders and Files) will be merged!
 If there is no Issue joined in the PR your PR will be labeld as **spam** and closed.
-If your code don't passes the Check on LeetCode.com your PR will be labeld as **"invalid"** and the Issue stays open for the next PR!
+If your code don't passes the Check on LeetCode.com your PR will be labled as **"invalid"** and the Issue stays open for the next PR!
 If your PR doesn' follow the Contributing Guidelines of this Repository it will be also marked as **spam** and closed!
 
-## Which PR will be accepted?
+## Which PR's will be accepted?
 * Ones you are assigned to
 * Your PR has to link the Issue
 * Your Solution must be correct - you can check ist on LeetCode (submit) if it works on different test-cases
