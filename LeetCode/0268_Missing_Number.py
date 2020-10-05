@@ -1,9 +1,23 @@
 '''
 Problem: Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 '''
+
+'''
+LeetCode Tested Solution:
+'''
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+    n = len(nums)
+    total = int((n)*(n + 1)/2) # Series Sum: Length of the Array is [0, n] or N so sum of numbers from 0 -> N
+    sumArray = sum(nums) # Array Sum
+    return total - sumArray # Find the difference between what series sum and the array sum - Yields the missing number
+
+'''
+User Input Solution:
+'''
 def MissingNumber(array):
     n = len(array)
-    total = (n)*(n + 1)/2 # Series Sum: Length of the Array is [0, n] or N so sum of numbers from 0 -> N
+    total = int((n)*(n + 1)/2) # Series Sum: Length of the Array is [0, n] or N so sum of numbers from 0 -> N
     sumArray = sum(array) # Array Sum
     return total - sumArray # Find the difference between what series sum and the array sum - Yields the missing number
  
