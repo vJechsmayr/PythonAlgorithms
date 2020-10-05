@@ -13,9 +13,12 @@ class Solution:
         # Counting how many gaps there are using the regex above
         num_gaps = len(re.findall(regex, text))
 
-
-        spaces_per_gap = num_spaces // num_gaps
-        end_spaces = num_spaces % num_gaps
+        if num_gaps > 0:
+            spaces_per_gap = num_spaces // num_gaps
+            end_spaces = num_spaces % num_gaps
+        else:
+            spaces_per_gap = 0
+            end_spaces = num_spaces
 
         # Replacing the gaps with the calculated number of spaces
         text = re.sub(regex, " " * spaces_per_gap, text)
