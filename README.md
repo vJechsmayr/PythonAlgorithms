@@ -44,6 +44,9 @@ If there is no Issue joined in the PR your PR will be labeld as **spam** and clo
 If your code don't passes the Check on LeetCode.com your PR will be labeld as **"invalid"** and the Issue stays open for the next PR!
 If your PR doesn' follow the Contributing Guidelines of this Repository it will be also marked as **spam** and closed!
 
+### Spam Users
+Users who spam this Repo with PRs/Issues that does not align the Contribution Guidelines will be **blocked**.
+
 ## Getting Started
 * Fork this repository (Click the Form button, top right of this page)
 * Clone your fork down to your local machine
@@ -73,6 +76,17 @@ git push origin branch-name
 ## Which PR will be accepted?
 * Ones you are assigned to
 * Your PR has to link the Issue
-* Your Solution must be correct - you can check ist on LeetCode (submit) if it works on different test-cases
+* Your Solution must be correct - you can check first on LeetCode (submit) if it works on different test-cases
+
+## Which PRs will be NOT accepted?
+* Ones you are NOT assigned to
+* Your PR is NOT linked to the Issue you are linked to
+* Your Solution is not correct
+* Your PR contains more than the .py file
+* PRs that "correct" Typos or spam files with comments
+* PRs that "correct" Coding Styles - Please accept that everybody has a different style
+
+## Hacktoberfest
+During October there come pretty much PRs and Issues - Please be patient because of my fulltime job I cannot be online 24/7 - I do my best to work through your PRs as soon as possible.
 
 __Thank You!__ 
