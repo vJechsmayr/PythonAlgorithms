@@ -75,4 +75,6 @@ git push origin branch-name
 * Your PR has to link the Issue
 * Your Solution must be correct - you can check ist on LeetCode (submit) if it works on different test-cases
 
+Please Add my Pull Request
+
 __Thank You!__ 
