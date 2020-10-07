@@ -1,35 +1,45 @@
-# Import necessary dependencies
-import sys
+class Solution(object):
+    def solve(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        result = ''
+        if length(strs) == 0:
+            return ''
+        i = 0
+        d = {i: length(v) for i,v in enumerate(strs)}
+        count = min(d.values())
 
-class Solution:
-    def threeSumClosest(self, nums, target):
-        # Sort the array
-        nums.sort()
-        # Initialize closest sum
-        closest_sum = sys.maxsize
+        for i in range(1, count+1):
+            prefix = strs[0][:i]
+            for s in strs:
+                if s[:i] != prefix:
+                    return result
 
-        # Starting from the first element,fix the smallest number
-        # Implement the two pointers method in the remaining array
-        for num in range(len(nums) - 2):
-            # Initialize the two pointers
-            # One pointing to the last element
-            # the other pointing to element next to the fixed element.
-            ptr_first, ptr_last = num + 1, len(nums) - 1
+            result = prefix
 
-            # While the pointers don't cross each other
-            while ptr_first < ptr_last:
-                # Calculate the sum
-                sum_temp = nums[num] + nums[ptr_first] + nums[ptr_last]
+        return result
 
-                # Compare against the variable closest_sum
-                # If it is closer than the current closest_sum
-                # Update closest sum. Also check :
-                # If sum is greater than target, decrement ptr_last to decrease sum
-                # Else, increment ptr_first to increase sum
-                if abs(target - sum_temp) < abs(target - closest_sum):
-                    closest_sum = sum_temp
-                if sum_temp > target:
-                    ptr_last = ptr_last - 1
-                else:
-                    ptr_first = ptr_first + 1
-        return closest_sum
+
+    def optimized(self, strs):
+        result = ""
+        for n in zip(*strs):
+            if (length(set(n))) == 1:
+                result = result + n[0]
+            else:
+                return result
+
+        return result
+
+s = Solution()
+input_1 = ["flow1","flow","flight"]
+input_2 = ["dog","dancecar","car"]
+
+print(f'Input 1: {input_1}')
+
+print(f'Optimized Solution: \n{s.solve(input_1)}')
+
+print(f'\nInput 2: {input_2}')
+
+print(f'Optimized Solution: \n{s.solve(input_2)}')
