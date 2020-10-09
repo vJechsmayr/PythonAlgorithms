@@ -10,7 +10,7 @@ def solve(r,k):
     ans = r
     if(not r):
         return x
-    while(r and (r.left or r.right)):
+    while(r and (r.left or r.right) ):
         if(r.val < k):
             if(r.right):
                 r = r.right
