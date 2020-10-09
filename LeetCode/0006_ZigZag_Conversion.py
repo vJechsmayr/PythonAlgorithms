@@ -30,7 +30,7 @@ def StringConvert(string,numRows):
 			
 
 def listmerge(lst1,lst2,lst3,LstLen):   # function to merge output columns of vertical and ladder subroutines
-	retLst = [" "]*LstLen               # list containing all rows after each merging routine iterations
+	retLst = [" "]*LstLen               # list containing all rows after each iterations of merging routine 
 	for i in range(LstLen) :			#-------------------------------------------------------
 		tempStr = ""					#			
 		char1 = lst1[i]					#   merging routine
