@@ -1,14 +1,9 @@
 class Solution:
-    def tribonacci(self, n: int) -> int:
-        a, b, c = 0, 1, 1
-        if n == 0:
-            return 0
-        elif n == 1 or n == 2:
-            return 1
-        else:
-            for _ in range(n - 2):
-                temp = a + b + c
-                a = b
-                b = c
-                c = temp
-            return temp
+    def checkIfExist(self, arr: List[int]) -> bool:
+
+        seen = set()
+        for x in arr:
+            if x * 2 in seen or (not x % 2 and x // 2 in seen):
+                return True
+            seen.add(x)
+        return False
