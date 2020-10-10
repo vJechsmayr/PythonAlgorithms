@@ -7,7 +7,8 @@ class Solution(object):
             :rtype: int
             """
             wait = 0
-            pro = 0                                                                            high = 0
+            pro = 0                                                             
+            high = 0
             res = -1
             for i in range(len(customers)):
                 vacc = 4 - wait
