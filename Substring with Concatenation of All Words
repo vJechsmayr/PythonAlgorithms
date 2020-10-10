@@ -1,0 +1,17 @@
+def wrap(s, n):
+    return [s[i:i+n] for i in range(0, len(s), n)]
+
+class Solution:
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        wordlength = len(words[0])
+        wordset = set(words)
+        strlength = len(s)     
+        matchlength = len(words) * wordlength
+        sortedmatch = "".join(sorted(words))
+        result = []
+        for i in range(0,(strlength - matchlength) + 1):
+            if s[i:i + wordlength] in wordset:
+                cursortedmatch = "".join(sorted(wrap(s[i:i + matchlength], wordlength)))
+                if cursortedmatch == sortedmatch:
+                    result.append(i)                
+        return result
