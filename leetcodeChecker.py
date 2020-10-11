@@ -1,7 +1,4 @@
 import requests, os, re, json, time
-from github import Github
-import browser_cookie3
-import keyring, pickle
 from bs4 import BeautifulSoup
 
 from dotenv import load_dotenv

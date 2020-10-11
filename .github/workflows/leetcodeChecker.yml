@@ -16,7 +16,7 @@ jobs:
           python-version: 3.8
       - name: execute checker script
         run: |
-          python codechecker.py
+          python leetcodeChecker.py
         with:
           github-token: ${{ github.token }}
         env:
