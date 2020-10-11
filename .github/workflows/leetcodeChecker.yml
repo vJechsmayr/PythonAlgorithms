@@ -1,0 +1,26 @@
+name: py
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # - name: checkout repo content # checkout is unecessary
+      #   uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: execute checker script
+        run: |
+          python leetcodeChecker.py
+        with:
+          github-token: ${{ github.token }}
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+
