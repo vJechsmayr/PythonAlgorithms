@@ -5,4 +5,4 @@ class Solution(object):
                 arr[i] = -1
             else:
                 arr[i] = max(arr[i+1:])
-        return
+        return arr
