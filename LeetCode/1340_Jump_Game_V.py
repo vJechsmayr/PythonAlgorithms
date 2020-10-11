@@ -1,11 +1,5 @@
 class Solution:
     def maxJumps(self, arr: List[int], d: int) -> int:
-        """
-        :type arr: List[int]
-        :type d: int
-        :rtype: int
-        """
-
         dp = [1] * len(arr)
 
         for i, _ in sorted(enumerate(arr), key=lambda x: x[1]):
