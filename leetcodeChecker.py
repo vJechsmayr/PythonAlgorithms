@@ -1,6 +1,6 @@
 import requests, os, re, json, time
 from bs4 import BeautifulSoup
-
+from github import Github
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -303,7 +303,9 @@ code = r.text
 
 load_session_cookie(leetcode_session_token)
 result = submit_solution(problem_name,'python3',code)
-if result['state'] == 'Finished':
+if result is None:
+    print("Nothing to do")
+elif result['state'] == 'Finished':
     pull.create_issue_comment("All test case have been passed, can be merged")
 else:
     pull.create_issue_comment(result['state'])
