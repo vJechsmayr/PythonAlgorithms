@@ -2,7 +2,7 @@ import math
 import sys
 
 class Solution:
-    def Find132Pattern(self, nums: List[int]):
+    def find132pattern(self, nums: List[int]):
         n = len(nums)
         top = n
         third = -sys.maxsize
