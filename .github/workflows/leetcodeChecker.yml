@@ -19,7 +19,6 @@ jobs:
           python leetcodeChecker.py
         with:
           github-token: ${{ github.token }}
-        env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
