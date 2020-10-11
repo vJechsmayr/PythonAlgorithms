@@ -14,7 +14,7 @@ class Solution(object):
             if mod-a <= b:
                 b -= mod
             return a+b
-        
+
         def mulmod(a, b, mod):  # avoid overflow in other languages
             a %= mod
             b %= mod
@@ -35,12 +35,12 @@ class Solution(object):
             count[start] += 1
             if end+1 < len(count):
                 count[end+1] -= 1
-        for i in xrange(1, len(count)):
+        for i in range(1, len(count)):
             count[i] += count[i-1]
         nums.sort()
         count.sort()
         result = 0
-        for i, (num, c) in enumerate(itertools.izip(nums, count)):
+        for i, (num, c) in enumerate(zip(nums, count)):
             # result = addmod(result, mulmod(num, c, MOD), MOD)
             result = (result+num*c)%MOD
         return result
