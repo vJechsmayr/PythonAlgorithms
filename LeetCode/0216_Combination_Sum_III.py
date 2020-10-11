@@ -11,4 +11,3 @@ class Solution(object):
             ret.append(path)
         for i in range(len(nums)):
             self.dfs(nums[i+1:], k-1, n-nums[i], path+[nums[i]], ret)
-            
