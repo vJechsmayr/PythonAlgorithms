@@ -14,7 +14,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: execute checker script
+      - name: run python script
+        uses: ./
         with:
           github-token: ${{ github.token }}
           pull-number: ${{ github.event.pull_request.number }}
