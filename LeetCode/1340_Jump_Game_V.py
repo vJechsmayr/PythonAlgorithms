@@ -1,5 +1,5 @@
-class Solution(object):
-    def maxJumps(self, arr, d):
+class Solution:
+    def maxJumps(self, arr: List[int], d: int) -> int:
         """
         :type arr: List[int]
         :type d: int
@@ -9,7 +9,7 @@ class Solution(object):
         dp = [1] * len(arr)
 
         for i, _ in sorted(enumerate(arr), key=lambda x: x[1]):
-            max_h = None
+            max_h = 0
             for j in range(i - 1, max(i - d - 1, -1), -1):
                 max_h = max(max_h, arr[j])
                 if max_h < arr[i]:
@@ -17,7 +17,7 @@ class Solution(object):
                 else:
                     break
 
-            max_h = None
+            max_h = 0
             for j in range(i + 1, min(i + d + 1, len(arr))):
                 max_h = max(max_h, arr[j])
                 if max_h < arr[i]:
