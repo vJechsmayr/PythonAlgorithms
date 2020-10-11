@@ -15,11 +15,12 @@ jobs:
         with:
           python-version: 3.8
       - name: execute checker script
-        run: |
-          python leetcodeChecker.py
         with:
           github-token: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          pull-number: ${{ github.event.pull_request.number }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+        run: |
+          python leetcodeChecker.py
 
