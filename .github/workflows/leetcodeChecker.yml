@@ -15,7 +15,6 @@ jobs:
         with:
           python-version: 3.8
       - name: run python script
-        uses: ./
         with:
           github-token: ${{ github.token }}
           pull-number: ${{ github.event.pull_request.number }}
