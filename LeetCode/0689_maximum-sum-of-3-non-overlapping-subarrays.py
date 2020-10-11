@@ -12,7 +12,7 @@ class Solution(object):
 
         left_pos = [0] * n
         total = accu[k]-accu[0]
-        for i in xrange(k, n):
+        for i in range(k, n):
             if accu[i+1]-accu[i+1-k] > total:
                 left_pos[i] = i+1-k
                 total = accu[i+1]-accu[i+1-k]
@@ -21,7 +21,7 @@ class Solution(object):
 
         right_pos = [n-k] * n
         total = accu[n]-accu[n-k]
-        for i in reversed(xrange(n-k)):
+        for i in reversed(range(n-k)):
             if accu[i+k]-accu[i] > total:
                 right_pos[i] = i
                 total = accu[i+k]-accu[i]
@@ -29,7 +29,7 @@ class Solution(object):
                 right_pos[i] = right_pos[i+1]
 
         result, max_sum = [], 0
-        for i in xrange(k, n-2*k+1):
+        for i in range(k, n-2*k+1):
             left, right = left_pos[i-1], right_pos[i+k]
             total = (accu[i+k]-accu[i]) + \
                     (accu[left+k]-accu[left]) + \
