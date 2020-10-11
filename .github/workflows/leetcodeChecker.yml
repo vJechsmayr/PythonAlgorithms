@@ -14,11 +14,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: run python script
-        with:
-          github-token: ${{ github.token }}
-          pull-number: ${{ github.event.pull_request.number }}
-          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-        run: python leetcodeChecker.py
+      - name: Install dependencies
+        run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      - name: run python
+        run: |
+            python leetcodeChecker.py
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          LEETCODE_SESSION_TOKEN: ${{ secrets.LEETCODE_SESSION }}
 

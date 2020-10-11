@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='sample.env')
+load_dotenv()
+#load_dotenv(dotenv_path='sample.env')
 
 LC_BASE = 'https://leetcode.com'
 LC_CSRF = LC_BASE + '/ensure_csrf/'
