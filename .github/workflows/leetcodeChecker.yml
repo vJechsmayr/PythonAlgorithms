@@ -20,7 +20,5 @@ jobs:
           pull-number: ${{ github.event.pull_request.number }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-        run: |
-          python leetcodeChecker.py
+        run: python leetcodeChecker.py
 
