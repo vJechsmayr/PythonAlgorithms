@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: checkout repo content # checkout is unecessary
-      #   uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
       - name: setup python
         uses: actions/setup-python@v2
         with:
