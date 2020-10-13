@@ -13,7 +13,7 @@ class Solution:
         y = sum(p[1] for p in positions) / len(positions)
         lr = 1          # initial learning rate
         momentum = 0.8  # reduces oscillation and therefore accelerates convergence
-		dx = 0
+	dx = 0
         dy = 0
         while lr > 1e-8:
             dx = pdx(x, y) + momentum * dx
