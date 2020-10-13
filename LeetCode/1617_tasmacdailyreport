@@ -1,0 +1,20 @@
+#Tasmac Daily Report
+
+print('Shop Number')
+Shop_number = input()
+
+print('Gold beer')
+Gold_Beer = input()
+
+print('Full Beer')
+Full_beer = input()
+
+print('confrim: Yes or No')
+final_input = input()
+yes = Shop_number+ '*' + Gold_Beer+ '*' + Full_beer
+
+if final_input == 'yes':
+    print(yes)
+
+else:
+    print('Developed By @rexb0tnet')
