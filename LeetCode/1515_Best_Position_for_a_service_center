@@ -1,0 +1,26 @@
+class Solution:
+    def getMinDistSum(self, positions: List[List[int]]) -> float:
+        def dist(x, y):
+            return sum(math.sqrt((x-i)**2 + (y-j)**2) for i, j in positions)
+        
+        def pdx(x, y):  # partial derivative with respect to x
+            return sum(((x-i) / math.sqrt((x-i)**2 + (y-j)**2) if x-i else 0) for i, j in positions)
+        
+        def pdy(x, y):  # partial derivative with respect to y
+            return sum(((y-j) / math.sqrt((x-i)**2 + (y-j)**2) if y-j else 0) for i, j in positions)
+        
+        x = sum(p[0] for p in positions) / len(positions)
+        y = sum(p[1] for p in positions) / len(positions)
+        lr = 1          # initial learning rate
+        momentum = 0.8  # reduces oscillation and therefore accelerates convergence
+		dx = 0
+        dy = 0
+        while lr > 1e-8:
+            dx = pdx(x, y) + momentum * dx
+            dy = pdy(x, y) + momentum * dy
+            x -= lr * dx
+            y -= lr * dy
+            lr *= 0.99
+            if not (dx or dy):
+                lr /= 2
+        return dist(x, y)
