@@ -10,7 +10,7 @@ class Solution:
         #     1. build a prefix list and iterate it
         #     2. at each iteration, use binary search to find prefix+s
         #     3. after search done, get length between left and i
-
+ 
         n = len(nums)
         result = n + 1
 
