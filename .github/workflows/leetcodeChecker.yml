@@ -22,7 +22,7 @@ jobs:
         run: |
             python leetcodeChecker.py
         env:
-          GITHUB_ACCESS_TOKEN: ${{ github.token }}
+          GITHUB_ACCESS_TOKEN: ${{ github.TOKEN }}
           REPO_NAME:  ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
