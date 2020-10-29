@@ -1,0 +1,5 @@
+requests==2.24.0
+bs4==0.0.1
+PyGithub==1.53
+python-dotenv==0.14.0
+
