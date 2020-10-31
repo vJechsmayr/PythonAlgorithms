@@ -22,5 +22,3 @@ class Solution:
         if len(indexes_to_swap) == 2:
             return A[indexes_to_swap[0]] == B[indexes_to_swap[1]] and A[indexes_to_swap[1]] == B[indexes_to_swap[0]]
         return dup
-
-print(Solution().buddyStrings("aa", "aa"))
