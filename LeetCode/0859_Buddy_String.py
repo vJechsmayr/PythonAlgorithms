@@ -1,12 +1,7 @@
 class Solution:
-    @staticmethod
-    def update_char_count(char, char_count):
-        curr_char_count = char_count.get(char, 0)
-        curr_char_count += 1
-        char_count[char] = curr_char_count
-        
-    
-    def buddyStrings(self, A: str, B: str) -> bool:        
+    def buddyStrings(self, A: str, B: str) -> bool:
+        if len(A) != len(B):
+            return False
         char_count = {}
         indexes_to_swap = []
         dup = False
