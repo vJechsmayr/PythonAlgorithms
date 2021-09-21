@@ -86,7 +86,8 @@ git push origin branch-name
 * PRs that "correct" Typos or spam files with comments
 * PRs that "correct" Coding Styles - Please accept that everybody has a different style
 
-## Hacktoberfest
+## Hacktoberfest 2020
 During October there come pretty much PRs and Issues - Please be patient because of my fulltime job I cannot be online 24/7 - I do my best to work through your PRs as soon as possible.
+This Repository is open for **Hacktoberfest 2020 ONLY**! No PRs/Issues for Hacktoberfest 2021 or later will be accepted and marked as **invalid/spam**
 
 __Thank You!__ 
